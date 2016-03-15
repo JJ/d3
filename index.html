@@ -173,7 +173,43 @@ console.log(my_data)
 	</section>
 
 	<section><!-- Data joins -->
-	  <section><h1>D3 → funcional </h1></section>
+	  <section><h1>D3 → funcional </h1>
+	    <h2>Los <em>data joins</em> declaran qué se quiere hacer
+	      con los datos.</h2>
+	  </section>
+	  
+	  <section>
+	    <pre><code>var times = time_div.selectAll("div").data(data);</code></pre>
+	    <h2 class='fragment'><code>div</code>s no existen...</h2>
+	    <h3 class='fragment'>... todavía</h3>
+	    <pre class='fragment'><code>times.enter().append("div")
+			   .style("width", function(d) { 
+			     console.log("ENTER"+d);
+			     return d/100 + "px"; 
+			   })
+			   .text(function(d) { return d; });
+	    </code></pre>
+
+	    <aside class='notes'>Se le añade un div y se establece un
+	      tamaño que es el que queremos para la barra.</aside>
+	  </section>
+	  
+	  <section><h1>¿Y si ya existen?</h1>
+	    <pre class='fragment'><code>times.style("width", function(d) { 
+		     console.log("ENTER+UPDATE"+d);
+		     return d/100 + "px"; 
+		   })
+		    	.text(function(d) { return d; });</code></pre>
+	    <aside class='notes'>Se actualizan los datos existentes
+	      con este código (igual que el anterior).</aside>
+	  </section>
+
+	  <section><h1>¿Y si ya se fueron?</h1>
+	    <pre
+	    class='fragment'><code>times.exit().remove();</code></pre>
+	    <aside class='notes'>En este caso, salvo que borremos una
+	    diapo sobre la marcha, no la vamos a usar... aunque
+	      podemos hacerlo a lo cafre</aside></section>
 	</section>
       </div>
 
