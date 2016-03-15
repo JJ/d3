@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     
     <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/extra.css">
     <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
     
     <!-- Code syntax highlighting -->
@@ -53,7 +54,7 @@
 	  <h1>Librería JavaScript para el navegador</h1>
 
 	  <pre><code><script src="https://d3js.org/d3.v3.min.js" charset="utf-8">
-	  </script></code></pre>
+</script></code></pre>
 	  <aside class='notes'>Las <a href='https://github.com/mbostock/d3/wiki'>instrucciones son bastante precisas en cuanto al charset y demás</a>. También se puede usar el clásico CDN https://cdnjs.com/libraries/d3. Siempre es importante usar o bien versiones online o, mucho mejor CDNs, en vez de versiones descargadas. ¿Por qué se pone el // en vez de http? </aside>
 	</section>
 
@@ -73,10 +74,45 @@
 
 	   <section id='htmlwidget-container'>
 	     <div id="htmlwidget-3336" style="width:960px;height:500px;" class="plotly html-widget"></div>
-	     <script type="application/json" data-for="htmlwidget-3336">{"x":{"data":[{"x":[1,2,3,4,7,10,13,16,18,21,23],"y":[18208995,16873318,20947219,20081733,20351887,23403185,24802931,22814451,25483504,25448684,24015425],"text":["votos: 18208995<br>Tipo:  Congreso<br>partidos: 70","votos: 16873318<br>Tipo:  Congreso<br>partidos: 52","votos: 20947219<br>Tipo:  Congreso<br>partidos: 59","votos: 20081733<br>Tipo:  Congreso<br>partidos: 51","votos: 20351887<br>Tipo:  Congreso<br>partidos: 63","votos: 23403185<br>Tipo:  Congreso<br>partidos: 85","votos: 24802931<br>Tipo:  Congreso<br>partidos: 69","votos: 22814451<br>Tipo:  Congreso<br>partidos: 97","votos: 25483504<br>Tipo:  Congreso<br>partidos: 96","votos: 25448684<br>Tipo:  Congreso<br>partidos: 98","votos: 24015425<br>Tipo:  Congreso<br>partidos: 62"],"key":null,"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgb(248,118,109)","opacity":1,"size":[13.7742214553942,11.1917909343566,12.2897027575514,11.0213712947896,12.8576591133593,15.4993450005551,13.6484970305592,16.7148394102067,16.6179443241592,16.8110140567108,12.7190535456617],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgb(248,118,109)"}},"name":" Congreso","legendgroup":" Congreso","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"},{"x":[5,9,12,14,17,20,24],"y":[19277743,18629339,21817932,20881613,22563069,21553906,21994540],"text":["votos: 19277743<br>Tipo:  Municipales<br>partidos: 117","votos: 18629339<br>Tipo:  Municipales<br>partidos: 173","votos: 21817932<br>Tipo:  Municipales<br>partidos: 163","votos: 20881613<br>Tipo:  Municipales<br>partidos: 30","votos: 22563069<br>Tipo:  Municipales<br>partidos: 31","votos: 21553906<br>Tipo:  Municipales<br>partidos: 30","votos: 21994540<br>Tipo:  Municipales<br>partidos: 40"],"key":null,"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgb(0,186,56)","opacity":1,"size":[18.5195833841632,22.6771653543307,22.0044346293545,3.77952755905512,5.35982742048584,3.77952755905512,8.77687450722468],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgb(0,186,56)"}},"name":" Municipales","legendgroup":" Municipales","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"},{"x":[6,8,11,15,19,22,25],"y":[19071497,15657676,18364794,20808681,15417268,15615296,15348649],"text":["votos: 19071497<br>Tipo:  Parlamento Europeo<br>partidos: 35","votos: 15657676<br>Tipo:  Parlamento Europeo<br>partidos: 33","votos: 18364794<br>Tipo:  Parlamento Europeo<br>partidos: 35","votos: 20808681<br>Tipo:  Parlamento Europeo<br>partidos: 36","votos: 15417268<br>Tipo:  Parlamento Europeo<br>partidos: 31","votos: 15615296<br>Tipo:  Parlamento Europeo<br>partidos: 35","votos: 15348649<br>Tipo:  Parlamento Europeo<br>partidos: 39"],"key":null,"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgb(97,156,255)","opacity":1,"size":[7.31318547404771,6.51668721024719,7.31318547404771,7.65045586015135,5.35982742048584,7.31318547404771,8.52042714334729],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgb(97,156,255)"}},"name":" Parlamento Europeo","legendgroup":" Parlamento Europeo","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"}],"layout":{"margin":{"b":177.534246575343,"l":72.3287671232877,"t":23.3059360730594,"r":7.30593607305936},"plot_bgcolor":"rgb(235,235,235)","paper_bgcolor":"rgb(255,255,255)","font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xaxis":{"type":"linear","autorange":false,"tickmode":"array","range":[0.4,25.6],"ticktext":["1977/6- Congreso","1979/3- Congreso","1982/10- Congreso","1986/6- Congreso","1987/6- Municipales","1987/6- Parlamento Europeo","1989/10- Congreso","1989/6- Parlamento Europeo","1991/5- Municipales","1993/6- Congreso","1994/6- Parlamento Europeo","1995/5- Municipales","1996/3- Congreso","1999/6- Municipales","1999/6- Parlamento Europeo","2000/3- Congreso","2003/5- Municipales","2004/3- Congreso","2004/6- Parlamento Europeo","2007/5- Municipales","2008/3- Congreso","2009/6- Parlamento Europeo","2011/11- Congreso","2011/5- Municipales","2014/5- Parlamento Europeo"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ticks":"outside","tickcolor":"rgb(51,51,51)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgb(77,77,77)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,1],"gridcolor":"rgb(255,255,255)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","hoverformat":".2f"},"annotations":[{"text":"Fecha","x":0.5,"y":-0.42490932228188,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"middle"},{"text":"votos","x":-0.150528414620038,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"center","yanchor":"middle"},{"text":"partidos<br>Tipo","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"top"}],"yaxis":{"type":"linear","autorange":false,"tickmode":"array","range":[14841906.25,25990246.75],"ticktext":["15000000","17500000","20000000","22500000","25000000"],"tickvals":[15000000,17500000,20000000,22500000,25000000],"ticks":"outside","tickcolor":"rgb(51,51,51)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgb(77,77,77)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,1],"gridcolor":"rgb(255,255,255)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgb(255,255,255)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgb(0,0,0)","family":"","size":11.689497716895},"y":0.876081063637537},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+	     <script type="application/json" data-for="htmlwidget-3336" id='this-data'>{"x":{"data":[{"x":[1,2,3,4,7,10,13,16,18,21,23],"y":[18208995,16873318,20947219,20081733,20351887,23403185,24802931,22814451,25483504,25448684,24015425],"text":["votos: 18208995<br>Tipo:  Congreso<br>partidos: 70","votos: 16873318<br>Tipo:  Congreso<br>partidos: 52","votos: 20947219<br>Tipo:  Congreso<br>partidos: 59","votos: 20081733<br>Tipo:  Congreso<br>partidos: 51","votos: 20351887<br>Tipo:  Congreso<br>partidos: 63","votos: 23403185<br>Tipo:  Congreso<br>partidos: 85","votos: 24802931<br>Tipo:  Congreso<br>partidos: 69","votos: 22814451<br>Tipo:  Congreso<br>partidos: 97","votos: 25483504<br>Tipo:  Congreso<br>partidos: 96","votos: 25448684<br>Tipo:  Congreso<br>partidos: 98","votos: 24015425<br>Tipo:  Congreso<br>partidos: 62"],"key":null,"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgb(248,118,109)","opacity":1,"size":[13.7742214553942,11.1917909343566,12.2897027575514,11.0213712947896,12.8576591133593,15.4993450005551,13.6484970305592,16.7148394102067,16.6179443241592,16.8110140567108,12.7190535456617],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgb(248,118,109)"}},"name":" Congreso","legendgroup":" Congreso","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"},{"x":[5,9,12,14,17,20,24],"y":[19277743,18629339,21817932,20881613,22563069,21553906,21994540],"text":["votos: 19277743<br>Tipo:  Municipales<br>partidos: 117","votos: 18629339<br>Tipo:  Municipales<br>partidos: 173","votos: 21817932<br>Tipo:  Municipales<br>partidos: 163","votos: 20881613<br>Tipo:  Municipales<br>partidos: 30","votos: 22563069<br>Tipo:  Municipales<br>partidos: 31","votos: 21553906<br>Tipo:  Municipales<br>partidos: 30","votos: 21994540<br>Tipo:  Municipales<br>partidos: 40"],"key":null,"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgb(0,186,56)","opacity":1,"size":[18.5195833841632,22.6771653543307,22.0044346293545,3.77952755905512,5.35982742048584,3.77952755905512,8.77687450722468],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgb(0,186,56)"}},"name":" Municipales","legendgroup":" Municipales","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"},{"x":[6,8,11,15,19,22,25],"y":[19071497,15657676,18364794,20808681,15417268,15615296,15348649],"text":["votos: 19071497<br>Tipo:  Parlamento Europeo<br>partidos: 35","votos: 15657676<br>Tipo:  Parlamento Europeo<br>partidos: 33","votos: 18364794<br>Tipo:  Parlamento Europeo<br>partidos: 35","votos: 20808681<br>Tipo:  Parlamento Europeo<br>partidos: 36","votos: 15417268<br>Tipo:  Parlamento Europeo<br>partidos: 31","votos: 15615296<br>Tipo:  Parlamento Europeo<br>partidos: 35","votos: 15348649<br>Tipo:  Parlamento Europeo<br>partidos: 39"],"key":null,"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgb(97,156,255)","opacity":1,"size":[7.31318547404771,6.51668721024719,7.31318547404771,7.65045586015135,5.35982742048584,7.31318547404771,8.52042714334729],"symbol":"circle","line":{"width":1.88976377952756,"color":"rgb(97,156,255)"}},"name":" Parlamento Europeo","legendgroup":" Parlamento Europeo","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text"}],"layout":{"margin":{"b":177.534246575343,"l":72.3287671232877,"t":23.3059360730594,"r":7.30593607305936},"plot_bgcolor":"rgb(235,235,235)","paper_bgcolor":"rgb(255,255,255)","font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xaxis":{"type":"linear","autorange":false,"tickmode":"array","range":[0.4,25.6],"ticktext":["1977/6- Congreso","1979/3- Congreso","1982/10- Congreso","1986/6- Congreso","1987/6- Municipales","1987/6- Parlamento Europeo","1989/10- Congreso","1989/6- Parlamento Europeo","1991/5- Municipales","1993/6- Congreso","1994/6- Parlamento Europeo","1995/5- Municipales","1996/3- Congreso","1999/6- Municipales","1999/6- Parlamento Europeo","2000/3- Congreso","2003/5- Municipales","2004/3- Congreso","2004/6- Parlamento Europeo","2007/5- Municipales","2008/3- Congreso","2009/6- Parlamento Europeo","2011/11- Congreso","2011/5- Municipales","2014/5- Parlamento Europeo"],"tickvals":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],"ticks":"outside","tickcolor":"rgb(51,51,51)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgb(77,77,77)","family":"","size":11.689497716895},"tickangle":-90,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,1],"gridcolor":"rgb(255,255,255)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"y","hoverformat":".2f"},"annotations":[{"text":"Fecha","x":0.5,"y":-0.42490932228188,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"center","yanchor":"middle"},{"text":"votos","x":-0.150528414620038,"y":0.5,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-90,"xanchor":"center","yanchor":"middle"},{"text":"partidos<br>Tipo","x":1.02,"y":1,"showarrow":false,"ax":0,"ay":0,"font":{"color":"rgb(0,0,0)","family":"","size":14.6118721461187},"xref":"paper","yref":"paper","textangle":-0,"xanchor":"left","yanchor":"top"}],"yaxis":{"type":"linear","autorange":false,"tickmode":"array","range":[14841906.25,25990246.75],"ticktext":["15000000","17500000","20000000","22500000","25000000"],"tickvals":[15000000,17500000,20000000,22500000,25000000],"ticks":"outside","tickcolor":"rgb(51,51,51)","ticklen":3.65296803652968,"tickwidth":0.66417600664176,"showticklabels":true,"tickfont":{"color":"rgb(77,77,77)","family":"","size":11.689497716895},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"domain":[0,1],"gridcolor":"rgb(255,255,255)","gridwidth":0.66417600664176,"zeroline":false,"anchor":"x","hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgb(255,255,255)","bordercolor":"transparent","borderwidth":1.88976377952756,"font":{"color":"rgb(0,0,0)","family":"","size":11.689497716895},"y":0.876081063637537},"hovermode":"closest"},"source":"A","config":{"modeBarButtonsToRemove":["sendDataToCloud"]},"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 <script type="application/htmlwidget-sizing" data-for="htmlwidget-3336">{"viewer":{"width":450,"height":350,"padding":5,"fill":true},"browser":{"width":960,"height":500,"padding":5,"fill":true}}</script>
-
+<aside class='notes'>La principal diferencia entre tener el gráfico estático y usar alguna librería como d3.js es esta: añadir algún tipo de interacción. En este caso lo hemos generado automáticamente con Plotly desde el script en R original, así que no hay mucho código que mostrar. En <a href='https://plot.ly/r/'>esta página se ve cómo usarlo</a>. Los mismos principios del gráfico original están presentes en este. Pero intentaremos construirlos desde el principio.</aside>
 	   </section>
+	</section>
+
+	<section> <!-- Integrar los datos -->
+	  
+	  <section><h1>Integrar los datos en el script</h1>
+	  </section>
+
+	  <section>
+	    <pre><code>&lt;script type="application/json" id='this-data'>
+{"x":{
+  "data":[{"x":[1,2,3,4,7,10,13,16,18,21,23],
+  "y":[18208995,16873318,20947219,20081733,20351887,23403185,
+       24802931,22814451,25483504,25448684,24015425],
+  "text":["votos: 18208995<br>Tipo:  Congreso<br>partidos: 70",...
+</code></pre>
+
+<pre class='fragment'><code>var my_data_text = document.getElementById("this-data").textContent;
+var my_data = JSON.parse(my_data_text);
+console.log(my_data)
+</code></pre>
+</section>
+
+<section>
+  <div class='fragment chart' id='bar1'></div>
+  <script>var my_data_text = document.getElementById("this-data").textContent;
+    var my_data = JSON.parse(my_data_text);
+    console.log(my_data.x.data[0].y);
+    d3.select("#bar1")
+    .selectAll("div")
+    .data(my_data.x.data[0].y).enter()
+    .append("div")
+    .style("width", function(d) { console.log(d);return d/50000 + "px"; })
+    .text(function(d) { return d; });
+  </script>
+</section>
 	   
       </div>
 
@@ -85,14 +121,13 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-
 		<script>
 
 			// Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({			
-			width: 1024,
-			height: 768,
+			width: 1200,
+			height: 800,
 			controls: true,
 			progress: true,
 			history: true,
