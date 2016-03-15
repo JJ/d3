@@ -238,19 +238,20 @@ console.log(my_data)
 		   // Remove old elements as needed.
 		   times.exit().remove();
 		 }
-
+		 var slide_re = /\#\/(\d+)/;
 		 Reveal.addEventListener( 'slidechanged'
 					  , function(
 					    event ) {
 					      var this_time = new
 							Date().getTime();
-					      var this_slide =
-							event.indexh;
-					      time_in_slide[this_slide]=this_time
+					      var
+					      base_URI=event.previousSlide.baseURI;
+
+//					      console.log(base_URI);
+					      var last_slide =  slide_re.exec(base_URI)[1];
+//					      console.log("Esta "+this_slide);
+					      time_in_slide[last_slide]=this_time
 							- last_time;
-					      console.log(event);
-					      console.log(this_time);
-					      console.log(time_in_slide);
 					      last_time = this_time;
 					      update( time_in_slide );
 					    } );
