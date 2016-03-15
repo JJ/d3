@@ -102,6 +102,12 @@ console.log(my_data)
 
 <section>
   <div class='fragment chart' id='bar1'></div>
+  <pre><code>    d3.select("#bar1")
+    .selectAll("div")
+    .data(my_data.x.data[0].y).enter()
+    .append("div")
+    .style("width", function(d) { console.log(d);return d/50000 + "px"; })
+      .text(function(d) { return d; });</code></pre>
   <script>var my_data_text = document.getElementById("this-data").textContent;
     var my_data = JSON.parse(my_data_text);
     console.log(my_data.x.data[0].y);
