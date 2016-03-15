@@ -41,9 +41,10 @@
   </head>
   
   <body>
-    
+    <div id='fija' class='fija'></div>
+
     <div class="reveal">
-      
+
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 	<section>
@@ -125,7 +126,7 @@ console.log(my_data)
 	  </section>
 	</section>
 
-	<section>
+	<section> <!-- conceptos fundamentales -->
 	  <section>
   <div class='fragment chart' id='bar1'></div>
   <pre><code>    d3.select("#bar1")
@@ -155,9 +156,25 @@ console.log(my_data)
 	    <aside class='notes'>select es simplemente un selector que
 	    actúa como el selector similar de JQuery. En este caso,
 	      capturamos el objeto del DOM sobre el que vamos a
-	    trabajar.</aside>
+	    trabajar. Más información en <a
+	    href='https://github.com/mbostock/d3/wiki/Selections'>el
+	      wiki de D3</a>. </aside>
+	  </section>
+
+	  <section>
+	    <h2>Seleccionando por tipo de elemento</h2>
+	    <pre><code>var all_divs = bar1.selectAll("div")</code></pre>
+	    <img src='img/divs.png' class='fragment' alt='divs'>
+	    <aside class='notes'>En este caso estamos seleccionando
+	    nodos inexistentes, pero los vamos a hacer que existan de
+	      un momento a otro</aside>
 	  </section>
 	   
+	</section>
+
+	<section><!-- Data joins -->
+	  <section><h1>D3 → funcional </h1></section>
+	</section>
       </div>
 
       
@@ -166,27 +183,77 @@ console.log(my_data)
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 		<script>
-
-			// Full list of configuration options available at:
+		 var total_time = new Date().getTime();
+		 var last_time = total_time;
+		 // Full list of configuration options available at:
 			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({			
-			width: 1200,
-			height: 800,
-			controls: true,
-			progress: true,
-			history: true,
-			center: true,
+		 Reveal.initialize({			
+							width: 1200,
+							height: 800,
+							controls: true,
+							progress: true,
+							history: true,
+							center: true,
+							
+							transition: 'concave', // none/fade/slide/convex/concave/zoom
+							
+							// Optional reveal.js plugins
+							dependencies: [
+							  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+							  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+							  { src: 'plugin/zoom-js/zoom.js', async: true },
+							  { src: 'plugin/notes/notes.js', async: true }
+							]
+		 });
+		 var time_in_slide = new Array;
+		 var time_div = d3.select("#fija");
 
-				transition: 'concave', // none/fade/slide/convex/concave/zoom
+		 // Taken from https://bl.ocks.org/mbostock/3808218
+		 function update(data) {
+		   
+		   // DATA JOIN
+		   // Join new data with old elements, if any.
+		   var times = time_div.selectAll("div").data(data);
+		   
+		   // ENTER
+		   // Create new elements as needed.
+	           times.enter().append("div")
+			   .style("width", function(d) { 
+			     console.log("ENTER"+d);
+			     return d/100 + "px"; 
+			   })
+			   .text(function(d) { return d; });
 
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
+		   // ENTER + UPDATE
+		   // Appending to the enter selection expands the update selection to include
+		   // entering elements; so, operations on the update selection after appending to
+		   // the enter selection will apply to both entering and updating nodes.
+		   times.style("width", function(d) { 
+		     console.log("ENTER+UPDATE"+d);
+		     return d/100 + "px"; 
+		   })
+		    	.text(function(d) { return d; });
+
+		   // EXIT
+		   // Remove old elements as needed.
+		   times.exit().remove();
+		 }
+
+		 Reveal.addEventListener( 'slidechanged'
+					  , function(
+					    event ) {
+					      var this_time = new
+							Date().getTime();
+					      var this_slide =
+							event.indexh;
+					      time_in_slide[this_slide]=this_time
+							- last_time;
+					      console.log(event);
+					      console.log(this_time);
+					      console.log(time_in_slide);
+					      last_time = this_time;
+					      update( time_in_slide );
+					    } );
 
 		</script>
 

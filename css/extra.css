@@ -18,3 +18,23 @@
   color: white;
 }
 
+.fija div {
+            font: 14px "Fira Mono";
+            background-color: blue;
+            text-align: right;
+            padding: 2px;
+            margin: 1px;
+            color:  #ff2c2d;
+}
+
+/* Posición fija */
+
+#fija { 
+        position: fixed;
+        border: 3px solid orange;
+        top: 0;
+        right: 0;
+        width: 200px;
+        z-index: 1;
+           
+}
