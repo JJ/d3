@@ -244,9 +244,6 @@ console.log(my_data)
 	    <aside class='notes'>Se trata de aplicar un mapa al objeto JSON que se ha obtenido, aplicando las contribuciones, los seguidores y las estrellas a tres cantidades; esto devolverá un array con un objeto con tres variables de instancia: x, y, r</aside>
 	  </section>
 
-	  <section><!-- usando escalas -->
-
-	  </section><!-- fin de uso de escalas -->
 
 	  <section><h1>El mapa de las estrellas</h1>
 	    <pre><code>var this_canvas = d3.select("#github");
@@ -263,6 +260,24 @@ console.log(my_data)
 	  
 
 	</section> <!-- Leyendo JSON -->
+
+	<section><!-- usando escalas  y CSV-->
+
+	  <section><h1>Leyendo también CSV</h1>
+	    <pre><code>d3.csv("http://opendata.ugr.es/dataset/604c78f6-f12f-4dbf-9d58-45402cfa91f3/resource/5646d07c-ffee-4231-a556-a69e82551336/download/demandadegrado20142015.csv",
+		 function( error, datos) {
+		 if (error) return console.warn(error);
+		console.log(datos);});
+	    </code></pre>
+	    <aside class='notes'>En este caso estamos leyendo un fichero de la página de opendata de la UGR, una cantidad de datos enormes sobre la docencia en la UGR, que nos permiten saber, en este caso, cuál es la demanda de cada uno de los grados de la UGR</aside>
+	  </section>
+
+	   <section>
+	    <h1>Viendo los círculos</h1>
+	    <svg id='ugr'></svg>
+	  </section>
+	  
+	</section><!-- fin de uso de escalas -->
 	      
       </div>
 
@@ -397,6 +412,23 @@ console.log(my_data)
 		 return this_obj;
 		 });
 		 console.log(matriculas);
+		 var this_canvas = d3.select("#ugr");
+		 this_canvas.attr("width",900).attr("height",700);
+		 var x_axis_scale = d3.scale.linear()
+                 .domain([0,600])
+		 .range([0,900]);
+		 var y_axis_scale = d3.scale.linear()
+                 .domain([0,600])
+		 .range([0,700]);
+
+		 var x_axis = d3.svg.axis()
+		 .scale(x_axis_scale);
+		 var y_axis = d3.svg.axis()
+		 .scale(y_axis_scale);
+
+		 this_canvas.append("g")
+		 .call(x_axis).call(y_axis);
+		 
 		 });
 		</script>
 
