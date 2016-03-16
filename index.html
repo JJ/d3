@@ -213,6 +213,25 @@ console.log(my_data)
 	    diapo sobre la marcha, no la vamos a usar... aunque
 	      podemos hacerlo a lo cafre</aside></section>
 	</section>
+
+	<section> <!-- Leyendo JSON -->
+	  <section>
+	    <h1>Leyendo JSON de un servidor</h1>
+	    <pre><code>d3.json("https://raw.githubusercontent.com/JJ/top-github-users-data/master/data/user-data-Granada.json"
+		 , function( error,json) {
+		     if (error) return console.warn(error);
+		     github_granada = json;
+
+		});</code></pre>
+	    <aside class='notes'>Esta <a href='https://github.com/mbostock/d3/wiki/Requests'>función</a> convenientemente hace la petición XHR y devuelve ya el resultado en forma de un objeto en JS con el que se puede trabajar</aside>
+	  </section>
+
+	  <section>
+	    <canvas id='github'></canvas>
+	  </section>
+
+	</section> <!-- Leyendo JSON -->
+	      
       </div>
 
       
@@ -285,7 +304,7 @@ console.log(my_data)
 
 //		 console.log(event);
 		 var slides_result =  slide_re.exec(base_URI);
-		 console.log(slides_result);
+//		 console.log(slides_result);
 		 var last_slide;
 		 var last_vslide;
 		 if ( slides_result !== null ) {
@@ -296,7 +315,7 @@ console.log(my_data)
 		       last_vslide = 0;
 		     }
 		 } else {
-		     console.log( base_URI );
+//		     console.log( base_URI );
 		     last_slide = 0;
 		 }
 		 if ( last_slide === event.indexh ) {
@@ -311,6 +330,14 @@ console.log(my_data)
 					      update( time_in_slide );
 					    } );
 
+		 // Lee los datos de Granada en Github.
+		 var github_granada ;
+		 d3.json("https://raw.githubusercontent.com/JJ/top-github-users-data/master/data/user-data-Granada.json"
+		 , function( error,json) {
+		     if (error) return console.warn(error);
+		     github_granada = json;
+
+		 });
 		</script>
 
 	</body>
