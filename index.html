@@ -227,6 +227,7 @@ console.log(my_data)
 	  </section>
 
 	  <section>
+	    <h1>Viendo los círculos</h1>
 	    <svg id='github'></svg>
 	  </section>
 
@@ -337,12 +338,20 @@ console.log(my_data)
 		     if (error) return console.warn(error);
 		 github_granada = json.map( function (obj) {
 		 var this_obj = { x: obj.contributions/10,
-		 y: obj.followers };
+		 y: obj.followers,
+		 r: obj.stars/20 };
 		 return this_obj;
 		 });
 		 console.log( github_granada );
 		 var this_canvas = d3.select("#github");
 		 this_canvas.attr("width",900).attr("height",700);
+		 this_canvas.selectAll("circle")
+		 .data(github_granada)
+		 .enter().append("circle")
+		 .attr("cx", function(d) { return d.x })
+		 .attr("cy", function(d) { return d.y })
+		 .attr("r", function(d) { return d.r })
+		 .attr("fill","orange");
 		 
 		 });
 		</script>
