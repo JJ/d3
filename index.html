@@ -244,6 +244,10 @@ console.log(my_data)
 	    <aside class='notes'>Se trata de aplicar un mapa al objeto JSON que se ha obtenido, aplicando las contribuciones, los seguidores y las estrellas a tres cantidades; esto devolverá un array con un objeto con tres variables de instancia: x, y, r</aside>
 	  </section>
 
+	  <section><!-- usando escalas -->
+
+	  </section><!-- fin de uso de escalas -->
+
 	  <section><h1>El mapa de las estrellas</h1>
 	    <pre><code>var this_canvas = d3.select("#github");
 		this_canvas.attr("width",900).attr("height",700);</code></pre>
@@ -369,7 +373,7 @@ console.log(my_data)
 		 r: obj.stars/20 };
 		 return this_obj;
 		 });
-		 console.log( github_granada );
+//		 console.log( github_granada );
 		 var this_canvas = d3.select("#github");
 		 this_canvas.attr("width",900).attr("height",700);
 		 this_canvas.selectAll("circle")
@@ -380,6 +384,19 @@ console.log(my_data)
 		 .attr("r", function(d) { return d.r })
 		 .attr("fill","orange");
 		 
+		 });
+		 var matriculas;
+		 d3.csv("http://opendata.ugr.es/dataset/604c78f6-f12f-4dbf-9d58-45402cfa91f3/resource/5646d07c-ffee-4231-a556-a69e82551336/download/demandadegrado20142015.csv",
+		 function( error, datos) {
+		 if (error) return console.warn(error);
+		 console.log(datos);
+		 matriculas = datos.map( function (obj) {
+		 var this_obj = { x: obj["Plazas Ofertadas"],
+		 y: obj["Matric. Totales"],
+		 r: obj["Cupo General"]/obj["Matric. Totales"] };
+		 return this_obj;
+		 });
+		 console.log(matriculas);
 		 });
 		</script>
 
