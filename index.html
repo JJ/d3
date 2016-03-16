@@ -281,9 +281,31 @@ console.log(my_data)
 	   <section><h1>A escala humana</h1>
 	     <pre><code>var x_axis_scale = d3.scale.linear()
                  .domain([0,600])
-		 .range([0,h-padding*2]);</code></pre>
+		 .range([padding,h-padding*2]);</code></pre>
+	     <pre class='fragment'><code>var x_axis = d3.svg.axis()
+		 .scale(x_axis_scale)
+		 .orient("bottom").ticks(5);</code></pre>
 	     <aside class='notes'>Primero hay que crear una escala para que se conviertan automáticamente los objetos 
-	  
+	     </aside>
+	   </section>
+
+	   <section><h1>Añadiendo gráfico</h1>
+	     <pre><code>this_canvas.append("g")
+		 .attr("class","x axis")
+		 .attr("transform"
+		   , "translate(" + padding + "," + padding + ")")
+		 .call(x_axis);</code></pre>
+	   </section>
+
+	   <section><pre><code>this_canvas.selectAll("circle")
+		 .data(matriculas)
+		 .enter().append("circle")
+		 .attr("cx", function(d) { return x_axis_scale(d.x) })
+		 .attr("cy", function(d) { return y_axis_scale(d.y) })
+		 .attr("r", function(d) { return d.r*10 })
+		 .attr("fill","orange");
+		 });</code></pre>
+	   </section>
 	</section><!-- fin de uso de escalas -->
 	      
       </div>
@@ -439,7 +461,8 @@ console.log(my_data)
 		 .scale(y_axis_scale).orient("right").ticks(5);
 
 		 this_canvas.append("g").attr("class","x axis")
-    .attr("transform", "translate(" + padding + "," + padding + ")").call(x_axis);
+		 .attr("transform", "translate(" + padding + "," + padding + ")")
+		 .call(x_axis);
 		 
 		 this_canvas.append("g").attr("class","y axis")
     .attr("transform", "translate(" + padding + "," + padding + ")").call(y_axis);
