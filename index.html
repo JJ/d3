@@ -273,7 +273,8 @@ console.log(my_data)
 	  </section>
 
 	   <section>
-	    <h1>Viendo los círculos</h1>
+	     <h1>Usemos los ejes
+	    </h1>
 	    <svg id='ugr'></svg>
 	  </section>
 	  
@@ -413,22 +414,33 @@ console.log(my_data)
 		 });
 		 console.log(matriculas);
 		 var this_canvas = d3.select("#ugr");
-		 this_canvas.attr("width",900).attr("height",700);
+		 var h = 900;
+		 var v = 700;
+		 var padding = 20;
+		 this_canvas.attr("width",h).attr("height",v);
 		 var x_axis_scale = d3.scale.linear()
                  .domain([0,600])
-		 .range([0,900]);
+		 .range([0,h-padding*2]);
 		 var y_axis_scale = d3.scale.linear()
                  .domain([0,600])
-		 .range([0,700]);
+		 .range([0,v-padding*2]);
 
 		 var x_axis = d3.svg.axis()
-		 .scale(x_axis_scale);
-		 var y_axis = d3.svg.axis()
-		 .scale(y_axis_scale);
-
-		 this_canvas.append("g")
-		 .call(x_axis).call(y_axis);
+		 .scale(x_axis_scale)
+		 .orient("bottom").ticks(5);
 		 
+		 var y_axis = d3.svg.axis()
+		 .scale(y_axis_scale).orient("left").ticks(5);
+
+		 this_canvas.append("g").attr("class","x axis").call(x_axis);
+		 
+		 this_canvas.selectAll("circle")
+		 .data(matriculas)
+		 .enter().append("circle")
+		 .attr("cx", function(d) { return x_axis_scale(d.x) })
+		 .attr("cy", function(d) { return y_axis_scale(d.y) })
+		 .attr("r", function(d) { return d.r*10 })
+		 .attr("fill","orange");
 		 });
 		</script>
 
