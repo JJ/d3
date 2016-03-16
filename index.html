@@ -227,7 +227,7 @@ console.log(my_data)
 	  </section>
 
 	  <section>
-	    <canvas id='github'></canvas>
+	    <svg id='github'></svg>
 	  </section>
 
 	</section> <!-- Leyendo JSON -->
@@ -335,8 +335,15 @@ console.log(my_data)
 		 d3.json("https://raw.githubusercontent.com/JJ/top-github-users-data/master/data/user-data-Granada.json"
 		 , function( error,json) {
 		     if (error) return console.warn(error);
-		     github_granada = json;
-
+		 github_granada = json.map( function (obj) {
+		 var this_obj = { x: obj.contributions/10,
+		 y: obj.followers };
+		 return this_obj;
+		 });
+		 console.log( github_granada );
+		 var this_canvas = d3.select("#github");
+		 this_canvas.attr("width",900).attr("height",700);
+		 
 		 });
 		</script>
 
