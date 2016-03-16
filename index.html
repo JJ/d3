@@ -276,7 +276,13 @@ console.log(my_data)
 	     <h1>Usemos los ejes
 	    </h1>
 	    <svg id='ugr'></svg>
-	  </section>
+	   </section>
+
+	   <section><h1>A escala humana</h1>
+	     <pre><code>var x_axis_scale = d3.scale.linear()
+                 .domain([0,600])
+		 .range([0,h-padding*2]);</code></pre>
+	     <aside class='notes'>Primero hay que crear una escala para que se conviertan automáticamente los objetos 
 	  
 	</section><!-- fin de uso de escalas -->
 	      
@@ -420,20 +426,23 @@ console.log(my_data)
 		 this_canvas.attr("width",h).attr("height",v);
 		 var x_axis_scale = d3.scale.linear()
                  .domain([0,600])
-		 .range([0,h-padding*2]);
+		 .range([padding,h-padding*2]);
 		 var y_axis_scale = d3.scale.linear()
                  .domain([0,600])
-		 .range([0,v-padding*2]);
+		 .range([padding,v-padding*2]);
 
 		 var x_axis = d3.svg.axis()
 		 .scale(x_axis_scale)
 		 .orient("bottom").ticks(5);
 		 
 		 var y_axis = d3.svg.axis()
-		 .scale(y_axis_scale).orient("left").ticks(5);
+		 .scale(y_axis_scale).orient("right").ticks(5);
 
-		 this_canvas.append("g").attr("class","x axis").call(x_axis);
+		 this_canvas.append("g").attr("class","x axis")
+    .attr("transform", "translate(" + padding + "," + padding + ")").call(x_axis);
 		 
+		 this_canvas.append("g").attr("class","y axis")
+    .attr("transform", "translate(" + padding + "," + padding + ")").call(y_axis);
 		 this_canvas.selectAll("circle")
 		 .data(matriculas)
 		 .enter().append("circle")
