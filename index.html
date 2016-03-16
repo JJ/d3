@@ -231,6 +231,32 @@ console.log(my_data)
 	    <svg id='github'></svg>
 	  </section>
 
+	  <section>
+	    <h1>Obteniendo los datos</h1>
+	    <pre><code>github_granada = json.map( function (obj) {
+		 var this_obj = { x: obj.contributions/10,
+		 y: obj.followers,
+		 r: obj.stars/20 };
+		 return this_obj;
+		});</code></pre>
+
+	    <aside class='notes'>Se trata de aplicar un mapa al objeto JSON que se ha obtenido, aplicando las contribuciones, los seguidores y las estrellas a tres cantidades; esto devolverá un array con un objeto con tres variables de instancia: x, y, r</aside>
+	  </section>
+
+	  <section><h1>El mapa de las estrellas</h1>
+	    <pre><code>var this_canvas = d3.select("#github");
+		this_canvas.attr("width",900).attr("height",700);</code></pre>
+	    <pre class='fragment'><code>this_canvas.selectAll("circle")
+		 .data(github_granada)
+		 .enter().append("circle")
+		 .attr("cx", function(d) { return d.x })
+		 .attr("cy", function(d) { return d.y })
+		 .attr("r", function(d) { return d.r })
+		.attr("fill","orange");</code></pre>
+	    <aside class='notes'>Procedemos de la misma forma que lo hemos hecho antes: uniendo los datos a una serie de estructuras del DOM, en este caso círculos, que vamos añadiendo a la estructura SVG usando como parámetros del círculo lo que hemos obtenido antes y naranja porque queda bonito.</aside>
+	  </section>
+	  
+
 	</section> <!-- Leyendo JSON -->
 	      
       </div>
